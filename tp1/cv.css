@@ -16,8 +16,8 @@ header {
 
 
 .photo {
-    width: 100px; /* Largeur de la photo (tu peux ajuster : 80px, 120px, etc.) */
-    height: 100px; /* Hauteur identique pour garder la forme ronde */
+    width: 110px; /* Largeur de la photo (tu peux ajuster : 80px, 120px, etc.) */
+    height: 110px; /* Hauteur identique pour garder la forme ronde */
     border-radius: 50%; /* Rend la photo circulaire */
     object-fit: cover; /* Coupe proprement l’image si elle n’est pas carrée */
     transition: transform 0.3s ease; /* Animation fluide au survol */
