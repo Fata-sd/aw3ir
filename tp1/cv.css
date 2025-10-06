@@ -1,0 +1,87 @@
+/* --- Style global --- */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif; /* POLICE DECRITURE */
+    background: linear-gradient(to right, #eef2f3, #8e9eab); /* Dégradé de couleur du fond*/
+    margin: 1;
+    padding: 2;
+}
+
+/* --- En-tête --- */
+header {
+    text-align: center;
+    padding: 20px;
+    background: #d0dbde;
+    color: white;
+}
+
+
+.photo {
+    width: 100px; /* Largeur de la photo (tu peux ajuster : 80px, 120px, etc.) */
+    height: 100px; /* Hauteur identique pour garder la forme ronde */
+    border-radius: 50%; /* Rend la photo circulaire */
+    object-fit: cover; /* Coupe proprement l’image si elle n’est pas carrée */
+    transition: transform 0.3s ease; /* Animation fluide au survol */
+}
+
+.photo:hover {
+    transform: scale(1.2); /* Agrandit un peu l’image quand on passe la souris dessus */
+}
+
+
+
+
+/* --- Tableaux --- */
+table {
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #dfe6e9;
+}
+
+/* --- Liens --- */
+a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+a:hover {
+    color: orange;
+}
+
+/* --- Pied de page --- */
+footer {
+    text-align: center;
+    background: #2c3e50;
+    color: white;
+    padding: 10px;
+}
+
+/* --- Responsive (Media Query) --- */
+@media only screen and (max-width: 600px) {
+    body {
+        background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    }
+
+    table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    header, footer {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
