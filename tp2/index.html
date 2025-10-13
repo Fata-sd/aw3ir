@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulaire - TP2</title>
-
-        <!-- Lien vers la feuille de style -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,37 +11,32 @@
 
     <form method="get" action="action.html">
 
-        <!-- Champ Nom -->
         <label for="name">Nom :</label>
         <input type="text" id="name" name="name" minlength="2" maxlength="20" required>
+        <span class="icon-ok">✔</span>
         <br><br>
 
-        <!-- Champ Prénom -->
         <label for="firstname">Prénom :</label>
         <input type="text" id="firstname" name="firstname" minlength="2" maxlength="20" required>
         <span class="icon-ok">✔</span>
         <br><br>
 
-        <!-- Champ Date de naissance -->
         <label for="birthday">Date de naissance :</label>
         <input type="date" id="birthday" name="birthday" required>
         <span class="icon-ok">✔</span>
         <br><br>
 
-        <!-- Champ Adresse postale -->
         <label for="address">Adresse postale :</label>
         <input type="text" id="address" name="address" minlength="5" maxlength="50" required>
         <span class="icon-ok">✔</span>
         <br><br>
 
-        <!-- Champ Adresse mail -->
         <label for="email">Adresse mail :</label>
         <input type="email" id="email" name="email" minlength="5" maxlength="30" required>
         <span class="icon-ok">✔</span>
         <br><br>
 
-        <!-- Bouton d'envoi -->
-        <input type="submit" value="Envoyer">
+        <input type="submit" value="Envoyer" class="btn-primary">
 
     </form>
 
