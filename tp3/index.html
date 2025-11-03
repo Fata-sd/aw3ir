@@ -1,52 +1,68 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Formulaire - TP3</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>TP3 - Formulaire avec Bootstrap & JS</title>
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/bootstrap.css">
 </head>
-<body>
-    <nav>
-        <a href="..">🏠 Acceuil</a> / TP3
-    </nav>
-  <h1>Formulaire d'inscription</h1>
 
-  <form method="get" action="action.html">
+<body class="d-flex justify-content-center align-items-center vh-100">
 
-    <!-- Champ Nom -->
-    <label for="name">Nom :</label>
-    <input type="text" id="name" name="name" minlength="2" maxlength="20" required>
-    <span class="icon-ok">✔</span>
-    <br><br>
+<div class="container">
+    <h1 class="text-center mb-4">Formulaire d'inscription</h1>
 
-    <!-- Champ Prénom -->
-    <label for="firstname">Prénom :</label>
-    <input type="text" id="firstname" name="firstname" minlength="2" maxlength="20" required>
-    <span class="icon-ok">✔</span>
-    <br><br>
+    <form id="form-inscription" class="p-4 shadow rounded bg-white">
 
-    <!-- Champ Date de naissance -->
-    <label for="birthday">Date de naissance :</label>
-    <input type="date" id="birthday" name="birthday" required>
-    <span class="icon-ok">✔</span>
-    <br><br>
+        <div class="mb-3">
+            <label class="form-label">Nom :</label>
+            <input type="text" id="name" class="form-control" required minlength="2" maxlength="20">
+        </div>
 
-    <!-- Champ Adresse postale -->
-    <label for="address">Adresse postale :</label>
-    <input type="text" id="address" name="address" minlength="5" maxlength="50" required>
-    <span class="icon-ok">✔</span>
-    <br><br>
+        <div class="mb-3">
+            <label class="form-label">Prénom :</label>
+            <input type="text" id="firstname" class="form-control" required minlength="2" maxlength="20">
+        </div>
 
-    <!-- Champ Adresse mail -->
-    <label for="email">Adresse mail :</label>
-    <input type="email" id="email" name="email" minlength="5" maxlength="30" required>
-    <span class="icon-ok">✔</span>
-    <br><br>
+        <div class="mb-3">
+            <label class="form-label">Date de naissance :</label>
+            <input type="date" id="birthday" class="form-control" required>
+        </div>
 
-    <!-- Bouton d'envoi -->
-    <input type="submit" value="Envoyer" class="btn-primary">
+        <div class="mb-3">
+            <label class="form-label">Adresse :</label>
+            <input type="text" id="address" class="form-control" required minlength="5" maxlength="50">
+        </div>
 
-  </form>
+        <div class="mb-3">
+            <label class="form-label">Email :</label>
+            <input type="email" id="email" class="form-control" required minlength="5" maxlength="30">
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Envoyer</button>
+
+    </form>
+</div>
+
+<!-- ✅ MODAL Bootstrap -->
+<div class="modal fade" id="resultModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Informations envoyées ✅</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p id="resultText"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap + JS perso -->
+<script src="bootstrap-5.3.8-dist/bootstrap.js"></script>
 
 </body>
 </html>
