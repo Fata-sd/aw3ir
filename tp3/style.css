@@ -1,0 +1,170 @@
+/* === Style global === */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #e8ebf0, #f7f8fa);
+  margin: 0;
+  padding: 0;
+
+  /* Centrage vertical et horizontal */
+
+  min-height: 100vh;
+  display :flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* === Titre === */
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+/* === Formulaire === */
+form {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  width: 450px;
+  box-shadow: 0 2px 1px -1px #0003,
+              0 1px 1px #00000024,
+              0 1px 3px #0000001f;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+ 
+}
+
+/* petit effet au survol */
+form:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* === Étiquettes === */
+label {
+  width: 150px;
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* === Champs de saisie === */
+input[type="text"],
+input[type="email"],
+input[type="date"] {
+  width: 250px;
+  font-size: 1em;
+  border-radius: 5px;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* focus sur un champ */
+input:focus {
+  border-color: #0d6efd;
+  outline: none;
+  box-shadow: 0 0 4px rgba(13, 110, 253, 0.3);
+}
+
+/* === Bouton principal === */
+.btn-primary {
+  border-radius: 5px;
+  padding: 8px 16px;
+  background-color: #0d6efd;
+  border: 1px solid #0d6efd;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1em;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* effet au survol */
+.btn-primary:hover {
+  background-color: #0b5ed7;
+  transform: translateY(-2px);
+}
+
+/* désactivation du bouton si le formulaire est invalide */
+form:invalid input[type="submit"] {
+  background-color: gray;
+  border-color: gray;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* === Icône ✔ de validation === */
+.icon-ok {
+  display: none;
+  margin-left: 10px;
+  color: green;
+  font-weight: bold;
+}
+
+/* Affiche l’icône ✔ quand le champ est valide */
+input:valid + .icon-ok {
+  display: inline-block;
+}
+
+
+
+/* === Corps de la page action.html === *
+
+/* === Conteneur du résultat === */
+div {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  width: 500px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
+
+/* === Titre === */
+h1 {
+  text-align: center;
+  color: #0d6efd;
+  margin-bottom: 25px;
+  font-size: 1.8em;
+}
+
+/* === Bouton retour === */
+a.btn-primary {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  background-color: #0d6efd;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+a.btn-primary:hover {
+  background-color: #0b5ed7;
+  transform: translateY(-2px);
+}
+
+/* === Paragraphes === */
+div p {
+  font-size: 1em;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* === Liens adresse et email === */
+div a {
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+div a:hover {
+  text-decoration: underline;
+}
