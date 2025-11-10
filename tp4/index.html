@@ -1,39 +1,89 @@
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>TP4</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
-
-    <style>
-        body {
-            background-color: #e9ebee;
-            font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-            font-size: 16px;
-            margin: 0 auto;
-            max-width: 800px;
-        }
-    </style>
-
-    <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-    <!--<link rel="stylesheet" href="style.css">-->
-    <!--<script src="main.js"></script>-->
+<meta charset="UTF-8">
+<title>Formulaire contact avec carte</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<style>
+  .input-group-append {
+    margin-left: 5px;
+  }
+  #map { height: 200px; margin-top: 10px; }
+  .char-count { font-size: 0.9rem; color: gray; text-align: right; }
+  .gps-btn { background: #ffc107; color: #fff; font-weight: bold; }
+</style>
 </head>
+<body class="p-4">
 
-<body>
-    <nav>
-        <a href="..">🏠 Index</a> / TP4
-    </nav>
-    <h1>TP4</h1>
-    <!-- Add your site or application content here -->
-    <p>Hello world! This is HTML5 Boilerplate.</p>
-    <img src="../galilee.png" alt="Logo Galilee" />
+<div class="container">
+  <h2>Ajouter un contact</h2>
+  <form id="form-contact">
+    <!-- Nom -->
+    <div class="mb-3 row align-items-center">
+      <label class="col-sm-2 col-form-label">Nom</label>
+      <div class="col-sm-10">
+        <input type="text" id="name" class="form-control" required minlength="2" maxlength="50"
+               onkeyup="calcNbChar('name')" onkeypress="calcNbChar('name')">
+        <div class="char-count" id="count-name">0 car.</div>
+      </div>
+    </div>
+
+    <!-- Prénom -->
+    <div class="mb-3 row align-items-center">
+      <label class="col-sm-2 col-form-label">Prénom</label>
+      <div class="col-sm-10">
+        <input type="text" id="firstname" class="form-control" required minlength="2" maxlength="50"
+               onkeyup="calcNbChar('firstname')" onkeypress="calcNbChar('firstname')">
+        <div class="char-count" id="count-firstname">0 car.</div>
+      </div>
+    </div>
+
+    <!-- Date -->
+    <div class="mb-3 row align-items-center">
+      <label class="col-sm-2 col-form-label">Date de naissance</label>
+      <div class="col-sm-10">
+        <input type="date" id="birthday" class="form-control">
+        <div class="char-count" id="count-birthday">0 car.</div>
+      </div>
+    </div>
+
+    <!-- Adresse + GPS -->
+    <div class="mb-3 row align-items-center">
+      <label class="col-sm-2 col-form-label">Adresse</label>
+      <div class="col-sm-8">
+        <input type="text" id="address" class="form-control" required minlength="5" maxlength="100">
+      </div>
+      <div class="col-sm-2">
+        <button type="button" id="getLocationBtn" class="btn gps-btn w-100">📍 GPS</button>
+      </div>
+    </div>
+    <div id="map"></div>
+
+    <!-- Mail -->
+    <div class="mb-3 row align-items-center">
+      <label class="col-sm-2 col-form-label">Mail</label>
+      <div class="col-sm-10">
+        <input type="email" id="email" class="form-control">
+        <div class="char-count" id="count-email">0 car.</div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+  </form>
+
+  <!-- Tableau des contacts -->
+  <table class="table mt-4">
+    <thead>
+      <tr>
+        <th>Nom</th><th>Prénom</th><th>Date</th><th>Adresse</th><th>Mail</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="script.js"></script>
 </body>
-
 </html>
