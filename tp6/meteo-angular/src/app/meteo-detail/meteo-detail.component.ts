@@ -6,10 +6,13 @@ import { MeteoService } from "../services/meteo.service";
   selector: "app-meteo-detail",
   templateUrl: "./meteo-detail.component.html",
   styleUrls: ["./meteo-detail.component.css"],
+  
 })
 export class MeteoDetailComponent implements OnInit {
+
   meteo: any;
   latlon: string = "";
+  
 
   constructor(
     private route: ActivatedRoute,
@@ -35,5 +38,7 @@ export class MeteoDetailComponent implements OnInit {
         })
         .catch((fail) => (this.meteo = fail));
     }
+    
   }
+  
 }

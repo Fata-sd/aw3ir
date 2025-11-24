@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { MeteoComponent } from './meteo/meteo.component';
 import { MeteoDetailComponent } from './meteo-detail/meteo-detail.component';
 
-const routes: Routes = [
+const appRoutes: Routes = [
   { path: '', component: MeteoComponent },
-  { path: 'meteo/:city', component: MeteoDetailComponent }
+  { path: 'meteo/:name', component: MeteoDetailComponent },
+  { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -21,9 +23,10 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes, { enableTracing: false })
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
